@@ -36,8 +36,6 @@ def word_to_vec(model, cleaned_title, dict_idf, vocabulary):
     n = len(cleaned_title.split())
     words = [word for word in cleaned_title.split() if word in dict_idf]
     l = [np.asarray(model.wv[w]) for w in words if words.count(w)*dict_idf[w]/n > MIN_TFIDF]
-    # l = [np.asarray(model.wv[w])*words.count(w)*dict_idf[w]/ n for w in words]
-    # l = [np.asarray(model.wv[w])  for w in words]
     return np.sum(np.array(l), 0).tolist() if l != [] else [0] * 100
     
 
