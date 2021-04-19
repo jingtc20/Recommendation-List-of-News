@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import warnings
-warnings.filterwarnings('ignore')
 from gensim.models import Word2Vec
 from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -69,8 +67,8 @@ def main():
     # print(len(vocabulary))   # 97472
     
     # convert cleaned title to vector by word2vec and tfidf
-    # corpus = [title.split() for title in df['cleaned']]
-    # get_word2vec_model(corpus)
+    corpus = [title.split() for title in df['cleaned']]
+    get_word2vec_model(corpus)
     model = Word2Vec.load("word_2_vec.model")
     df['Word2Vec'] = df['cleaned'].apply(lambda x: word_to_vec(model, x, dict_idf, vocabulary))
     # print("Word2Vec run time: ", round(time.time() - start_time, 2))
