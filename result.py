@@ -21,12 +21,10 @@ MAX_K = 15       # max k of k_means cluster
 MIN_TFIDF = 0.4  # remove the word in title if its tfidf is lower than this value
 OPTIMAL_K = 8    # the optimal k is decided by the highest silhouette_score
 
-
 df = pd.read_csv('data.csv')
 # df = pd.read_csv('data.csv', nrows = 10000)
 df['cleaned'] = df['cleaned'].fillna("")
 print("Shape of the data: ", df.shape)
-
 
 
 def get_word2vec_model(corpus):
@@ -56,7 +54,6 @@ def choose_optimal_k(min_k, max_k, title_vec):
     return optimal_k
     
 
-
 def main():
     start_time = time.time()
     # calculate the tfidf 
@@ -68,14 +65,12 @@ def main():
     dict_idf = dict(zip(vocabulary, tfidf_vectorizer.idf_.tolist()))
     # print(len(vocabulary))   # 97472
 
-    
     # convert cleaned title to vector by word2vec and tfidf
-    # corpus = [title.split() for title in df['cleaned']]
-    # get_word2vec_model(corpus)
+    corpus = [title.split() for title in df['cleaned']]
+    get_word2vec_model(corpus)
     model = Word2Vec.load("word_2_vec.model")
     df['Word2Vec'] = df['cleaned'].apply(lambda x: word_to_vec(model, x, dict_idf, vocabulary))
     # print("Word2Vec run time: ", round(time.time() - start_time, 2))
-
 
     title_vec = df['Word2Vec'].tolist()
     optimal_k = OPTIMAL_K
@@ -83,7 +78,6 @@ def main():
     lables = kmeans.labels_
     df['lables'] = lables
     # print("k-means run time: ", round(time.time() - start_time, 2))
-
 
     recommendations = {}  
     recom_num = RECOM_NUM
