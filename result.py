@@ -18,7 +18,7 @@ RECOM_NUM = 5    # the number of recommended titles in each label
 MIN_K = 5        # min k of k_means cluster
 MAX_K = 15       # max k of k_means cluster
 MIN_TFIDF = 0.5  # remove the word in title if its tfidf is lower than this value
-OPTIMAL_K = 7    # the optimal k is decided by the highest silhouette_score
+OPTIMAL_K = 6    # the optimal k is decided by the highest silhouette_score
 
 
 df = pd.read_csv('data.csv')
