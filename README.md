@@ -4,10 +4,10 @@ make classification of 509,236 news using KMeans and build the recommendation li
 ***
 ## Results
 - The classification of the news with n_clusters = 6:  
-  <img src='pic/classification plot.png' width='400'/>
+  <img src='pic/classification plot.png' width='500'/>
 
 - The recommendation list with the most votes in each category:  
-  <img src='pic/recommendation plot.png' width='400'/>
+  <img src='pic/recommendation plot.png' width='500'/>
 
 ## Main Steps 
 - Run `Data_Analysis.ipynb` to analyze the data
