@@ -3,7 +3,7 @@ make classification of 509,236 news using KMeans and build the recommendation li
 
 ***
 ## Results
-- The classification of the news with n_clusters = ??:
+- The classification of the news with n_clusters = 6:
   <img src='pic/classification plot.png' width='300'/>
 
 - The recommendation list with the most votes in each category:
