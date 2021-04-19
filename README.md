@@ -1,10 +1,14 @@
 # Recommendation Lists of News
 make classification of 509,236 news using KMeans and build the recommendation list with the most votes in each category
 
-
-
-
 ***
+## Results
+- The classification of the news with n_clusters = ??:
+  <img src='pic/winner.png' width='300'/>
+
+- The recommendation list with the most votes in each category:
+  <img src='pic/draw.png' width='300'/>
+
 ## Main Steps 
 - Run `Data_Analysis.ipynb` to analyze the data
   * Library used: **pandas, numpy, nltk, sklearn**
@@ -32,11 +36,6 @@ make classification of 509,236 news using KMeans and build the recommendation li
 
 
 
-## Results
-- The classification of the news with n_clusters = ??:
-  <img src='pic/winner.png' width='300'/>
 
-- The recommendation list with the most votes in each category:
-  <img src='pic/draw.png' width='300'/>
 
 
