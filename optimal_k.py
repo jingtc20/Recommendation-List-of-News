@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import warnings
-warnings.filterwarnings('ignore')
 from gensim.models import Word2Vec
 import string
 from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
